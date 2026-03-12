@@ -207,7 +207,8 @@ int burnSdBoot0(BufferExtractCookie *cookie) {
     }
 
     ob_debug("burnSdBoot0 in mmcblk0:offset = 0x%x, len =0x%lx\n", sd_boot0_start, cookie->len);
-    updateSdBoot0(fd, cookie);
+    printf("Skipping dram param backup!!\n");
+    // updateSdBoot0(fd, cookie);
     int ret = writeSdBoot(fd, cookie->buffer, sd_boot0_start, cookie->len);
     fsync(fd);
     close(fd);
